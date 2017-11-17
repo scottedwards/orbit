@@ -24,6 +24,8 @@ class Gravity {
         let distanceX = Double(gravPoint.getPosition().x - planet.getPosition().x)
         let distanceY = Double(gravPoint.getPosition().y - planet.getPosition().y)
         var distance: Double = sqrt((distanceX * distanceX) + (distanceY * distanceY))
+        //the following is to stop the object being catapulted away infinetly fast
+        //(which happens when the distance approaches 0
         if (distance < 40) {
             distance = 40
         }
